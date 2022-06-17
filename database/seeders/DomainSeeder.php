@@ -14,6 +14,8 @@ class DomainSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Domain::factory(200)->create();
+        \App\Models\Domain::factory(200)
+        ->has(\App\Models\Ping::factory()->count(3))
+        ->create();
     }
 }

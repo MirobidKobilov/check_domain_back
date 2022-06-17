@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Domain;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Domain>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Ping>
  */
-class DomainFactory extends Factory
+class PingFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +18,7 @@ class DomainFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->domainName,
+            'latency' => $this->faker->numberBetween(50, 1200),
         ];
     }
 }
